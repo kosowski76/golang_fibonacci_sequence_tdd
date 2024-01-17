@@ -1,4 +1,5 @@
 # golang_fibonacci_sequence_tdd
+
     Calculating the value of the Fibonacci sequence for the current hour.
 
   Sample source code calculating the sum of the Fibonacci Sequence for a given hour (by an integer),
@@ -9,7 +10,7 @@ presenting the stages of creating 'life cycle' functionality using the Test Driv
             F(n-2) + F(n-1) for n > 1;
 
 
- ## 01.01. Problem formulation and analysis.
+## 01.01. Problem formulation and analysis.
 
  Input data:
 
@@ -30,15 +31,16 @@ presenting the stages of creating 'life cycle' functionality using the Test Driv
     'Given0shouldReturn0()' and for other positive n values 'GivenXshouldReturnY()'
 
 
- ## 02.01. Designing algorithms and tests
+## 02.01. Designing algorithms and tests.
 
-    The function is supposed to return 1 for hour 1 (i.e. we implement hour 0, but we will never return it)
+     The function is supposed to return 1 for hour 1 
+    (i.e. we implement hour 0, but we will never return it)
 
-    The function should also be able to count on a specific day of the month, 
+     The function should also be able to count on a specific day of the month, 
     but also be open to further, larger arguments (integration with external API #342)
 
-    The function is intended to handle lack of integrity in the case of a negative number argument
+     The function is intended to handle lack of integrity in the case of a negative number argument
 
 
-
-
+     Test preparation (stage Red) and initial assurance
+    acceptance of test fulfillment (stage Greenen)
