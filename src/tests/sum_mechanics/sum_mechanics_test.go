@@ -22,9 +22,14 @@ func TestGivenNegativeHoursThenFibonacciSumShouldTrowNFE(t *testing.T) {
 		testname := fmt.Sprintf("%d", negativeNum.n)
 		t.Run(testname, func(t *testing.T) {
 
-			_, error := fibonacci_sum.GetFibonacciSum(negativeNum.n)
+			fiboSum, err := fibonacci_sum.GetFibonacciSum(negativeNum.n)
 			// todo: should throw NumberFormatException
-			error.Error()
+			if fiboSum >= 0 {
+				t.Error(fmt.Sprintf("we were not expecting a fibonacci sum with negative n: %d", negativeNum.n))
+			}
+			if err != nil {
+				err.Error()
+			}
 		})
 	}
 }
@@ -56,10 +61,6 @@ func TestGivenNShouldReturnY(t *testing.T) {
 		{32, 2178309},
 		{35, 9227465},
 		{47, 2971215073},
-		//		{48, 4807526976},
-		//		{49, 7778742049},
-		//		{55, 139583862445},
-		//		{66, 27777890035288},
 	}
 
 	for _, positiveNum := range testsPositiveNumbers {
@@ -71,4 +72,9 @@ func TestGivenNShouldReturnY(t *testing.T) {
 			assert.EqualValues(t, positiveNum.expect, fibonacciCalc)
 		})
 	}
+}
+
+func BenchmarkFibonacciSumRecursive(b *testing.B) {
+
+	_, _ = fibonacci_sum.GetFibonacciSum(47)
 }

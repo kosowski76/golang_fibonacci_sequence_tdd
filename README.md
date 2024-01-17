@@ -45,7 +45,7 @@ presenting the stages of creating 'life cycle' functionality using the Test Driv
  ## 02.02. Preliminary assurance of test compliance.
 
      Test preparation (stage Red) and initial assurance
-    acceptance of test fulfillment (stage Greenen)
+    acceptance of test fulfillment (stage Green)
 
  
  ## 03.01. Refactor and feedback.
@@ -54,4 +54,29 @@ presenting the stages of creating 'life cycle' functionality using the Test Driv
     recursively, a large system load is noticeable for larger numbers
 
 
+ ## 03.02. Benchmarks and feedback.
 
+     ---
+    goos: linux
+    goarch: amd64
+    pkg: github.com/kosowski76/golang_fibonacci_sequence_tdd/src/tests/sum_mechanics
+    cpu: Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz
+    BenchmarkFibonacciSumRecursive
+    BenchmarkFibonacciSumRecursive-4   	       1	12021505516 ns/op
+    PASS    
+    Process finished with the exit code 0
+     ---
+
+
+## 03.03. Conclusions iteration and adjustment.
+
+     ---
+    goos: linux
+    goarch: amd64
+    pkg: github.com/kosowski76/golang_fibonacci_sequence_tdd/src/tests/sum_mechanics
+    cpu: Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz
+    BenchmarkFibonacciSumRecursive
+    BenchmarkFibonacciSumRecursive-4   	1000000000	         0.0000002 ns/op
+    PASS    
+    Process finished with the exit code 0
+     ---
