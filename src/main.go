@@ -8,7 +8,7 @@ import (
 
 var (
 	hourOnly           int
-	stringElementValue int
+	stringElementValue int64
 )
 
 func main() {
@@ -16,7 +16,7 @@ func main() {
 	hourOnly = getHourOnly()
 	fmt.Println("Current hour golden Fibonacci for n =", hourOnly)
 
-	stringElementValue = fibonacci_sum.FibonacciSequence(hourOnly)
+	stringElementValue, _ = fibonacci_sum.GetFibonacciSum(hourOnly)
 
 	fmt.Println(stringElementValue)
 }
@@ -27,8 +27,5 @@ func main() {
 func getHourOnly() int {
 
 	now := time.Now()
-
-	hour := now.Hour()
-
-	return hour
+	return now.Hour()
 }

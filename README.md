@@ -10,7 +10,7 @@ presenting the stages of creating 'life cycle' functionality using the Test Driv
             F(n-2) + F(n-1) for n > 1;
 
 
-## 01.01. Problem formulation and analysis.
+ ## 01.01. Problem formulation and analysis.
 
  Input data:
 
@@ -31,7 +31,7 @@ presenting the stages of creating 'life cycle' functionality using the Test Driv
     'Given0shouldReturn0()' and for other positive n values 'GivenXshouldReturnY()'
 
 
-## 02.01. Designing algorithms and tests.
+ ## 02.01. Designing algorithms and tests.
 
      The function is supposed to return 1 for hour 1 
     (i.e. we implement hour 0, but we will never return it)
@@ -42,7 +42,41 @@ presenting the stages of creating 'life cycle' functionality using the Test Driv
      The function is intended to handle lack of integrity in the case of a negative number argument
 
 
-## 02.02. Preliminary assurance of test compliance.
+ ## 02.02. Preliminary assurance of test compliance.
 
      Test preparation (stage Red) and initial assurance
     acceptance of test fulfillment (stage Greenen)
+
+ 
+ ## 03.01. Refactor and feedback.
+
+     When calling the sum function of the Fibonacci sequence 
+    recursively, a large system load is noticeable for larger numbers
+
+
+ ## 03.02. Benchmarks and feedback.
+
+     ---
+    goos: linux
+    goarch: amd64
+    pkg: github.com/kosowski76/golang_fibonacci_sequence_tdd/src/tests/sum_mechanics
+    cpu: Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz
+    BenchmarkFibonacciSumRecursive
+    BenchmarkFibonacciSumRecursive-4   	       1	12021505516 ns/op
+    PASS    
+    Process finished with the exit code 0
+     ---
+
+
+## 03.03. Conclusions iteration and adjustment.
+
+     ---
+    goos: linux
+    goarch: amd64
+    pkg: github.com/kosowski76/golang_fibonacci_sequence_tdd/src/tests/sum_mechanics
+    cpu: Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz
+    BenchmarkFibonacciSumRecursive
+    BenchmarkFibonacciSumRecursive-4   	1000000000	         0.0000002 ns/op
+    PASS    
+    Process finished with the exit code 0
+     ---
