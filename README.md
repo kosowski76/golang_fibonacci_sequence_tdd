@@ -30,7 +30,7 @@ presenting the stages of creating 'life cycle' functionality using the Test Driv
     'Given0shouldReturn0()' and for other positive n values 'GivenXshouldReturnY()'
 
 
- ## 02.01. Designing algorithms and tests
+ ## 02.01. Designing algorithms and tests.
 
     The function is supposed to return 1 for hour 1 (i.e. we implement hour 0, but we will never return it)
 
@@ -40,5 +40,6 @@ presenting the stages of creating 'life cycle' functionality using the Test Driv
     The function is intended to handle lack of integrity in the case of a negative number argument
 
 
+## 02.02. Preliminary assurance of test compliance.
 
 
